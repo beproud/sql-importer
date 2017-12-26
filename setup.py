@@ -22,5 +22,6 @@ setup(
     classifiers=classifiers,
     keywords=', '.join(keywords),
     author='Beproud',
+    author_email="righ.m9@gmail.com,crohaco@beproud.jp",
     packages=find_packages(),
 )

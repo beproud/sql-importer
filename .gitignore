@@ -1,0 +1,15 @@
+.coverage
+.tox/*
+.cache/*
+*.egg-info/*
+
+dist/*
+__pycache__/*
+
+htmlcov/*
+
+*.pyc
+*.pyo
+
+coverage.xml
+junit-py*.xml

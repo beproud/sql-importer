@@ -24,7 +24,7 @@ Usage
 
      import os
      from sql_importer import initialize
-     initialize(os.path.dirname(__file__), globals(), connection, sql_type='postgresql')
+     init(os.path.dirname(__file__), globals(), connection, sql_type='postgresql')
 
 - That's all, you can import sql files (removed `.sql` suffix) as python modules.
 

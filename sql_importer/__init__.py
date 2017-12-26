@@ -1,9 +1,6 @@
 # -*- coding:utf-8 -*-
 
-""" This is a hook for importing sql files.
-
-
-"""
+""" This is a hook for importing sql files. """
 
 import os
 import re
@@ -12,7 +9,7 @@ from .cursors import query_dict
 from . import loaders
 
 
-def initialize(basedir, exports, connection, sql_type="postgresql", import_ext=".sql"):
+def init(basedir, exports, connection, sql_type="postgresql", import_ext=".sql"):
     loader = getattr(loaders, sql_type).SQLLoader(basedir)
     for sql_file in os.listdir(basedir):
         name, ext = os.path.splitext(sql_file)

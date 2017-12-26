@@ -23,7 +23,7 @@ Usage
      # from django.db import connection
 
      import os
-     from sql_importer import initialize
+     from sql_importer import init
      init(os.path.dirname(__file__), globals(), connection, sql_type='postgresql')
 
 - That's all, you can import sql files (removed `.sql` suffix) as python modules.

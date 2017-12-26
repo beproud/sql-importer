@@ -13,3 +13,5 @@ htmlcov/*
 
 coverage.xml
 junit-py*.xml
+
+^data/*

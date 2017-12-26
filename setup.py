@@ -23,5 +23,5 @@ setup(
     keywords=', '.join(keywords),
     author='Beproud',
     author_email="righ.m9@gmail.com,crohaco@beproud.jp",
-    packages=find_packages(),
+    packages=find_packages(exclude=['tests']),
 )

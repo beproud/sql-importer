@@ -1,1 +1,4 @@
-from . import *  # NOQA
+# coding: utf-8
+from . import (
+    postgresql,
+)

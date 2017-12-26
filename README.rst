@@ -28,7 +28,7 @@ Usage
 
 - That's all, you can import sql files (removed `.sql` suffix) as python modules.
 
-  - Example: Example: `testing/sql/sum_sales.sql` exists.
+  - Example: `testing/sql/sum_sales.sql` exists.
 
   .. code:: SQL
 

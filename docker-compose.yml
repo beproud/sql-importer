@@ -1,0 +1,29 @@
+version: "2"
+
+services:
+  app:
+    image: python:latest
+    environment:
+      - PYTHONDONTWRITEBYTECODE=1
+    tty: true
+    command: /bin/bash
+    volumes:
+      - ./:/root/
+    command: |
+      bash -c "\
+      bash"
+    ports:
+      - "8888:8888"
+    links:
+      - postgres:db
+
+    privileged: true
+
+  postgres:
+    image: postgres:latest
+    environment:
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - ./data/postgresql/:/var/lib/postgresql/
+    expose:
+      - "5432"

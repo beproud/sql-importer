@@ -1,0 +1,19 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: python:latest
+        environment:
+          TOXENV: circleci
+          PG_HOST: localhost
+          PG_USER:
+      - image: postgres:latest
+        environment:
+          POSTGRES_USER: test_user
+          POSTGRES_PASSWORD: test_pass
+          POSTGRES_DB: test_db
+          POSTGRES_PORT: 5432
+    steps:
+      - checkout
+      - run: ../venv/bin/pip install tox pytest
+      - run: ../venv/bin/tox -e circleci

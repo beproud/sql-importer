@@ -17,5 +17,6 @@ jobs:
           POSTGRES_PORT: 5432
     steps:
       - checkout
-      - run: ../venv/bin/pip install tox pytest
-      - run: ../venv/bin/tox -e circleci
+      - run: python -m venv venv
+      - run: venv/bin/pip install tox pytest
+      - run: venv/bin/tox -e circleci

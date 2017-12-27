@@ -7,6 +7,7 @@ services:
       - PYTHONDONTWRITEBYTECODE=1
     tty: true
     command: /bin/bash
+    working_dir: /root/
     volumes:
       - ./:/root/
     command: |
@@ -23,6 +24,8 @@ services:
     image: postgres:latest
     environment:
       - PGDATA=/var/lib/postgresql/data/pgdata
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
     volumes:
       - ./data/postgresql/:/var/lib/postgresql/
     expose:

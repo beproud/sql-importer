@@ -9,9 +9,8 @@ jobs:
           PG_USER:
       - image: postgres:latest
         environment:
-          POSTGRES_USER: test_user
-          POSTGRES_PASSWORD: test_pass
-          POSTGRES_DB: test_db
+          POSTGRES_USER: postgres
+          POSTGRES_DB: postgres
           POSTGRES_PORT: 5432
     steps:
       - checkout

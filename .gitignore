@@ -5,6 +5,7 @@
 
 dist/*
 __pycache__/*
+venv/*
 
 htmlcov/*
 
@@ -15,3 +16,6 @@ coverage.xml
 junit-py*.xml
 
 ^data/*
+
+.bash_history
+.python_history

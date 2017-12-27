@@ -18,5 +18,5 @@ jobs:
     steps:
       - checkout
       - run: python -m venv venv
-      - run: venv/bin/pip install tox pytest
+      - run: venv/bin/pip install tox
       - run: venv/bin/tox -e circleci

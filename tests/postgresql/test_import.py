@@ -9,12 +9,6 @@ def sql():
     return _sql
 
 
-@pytest.fixture(autouse=True, scope='module')
-def init(sql):
-    sql.drop_table.execute()
-    sql.create_table.execute()
-
-
 def test_insert(sql):
     sql.insert.execute(name='apple', price=100)
     sql.insert.execute(name='orange', price=50)

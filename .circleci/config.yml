@@ -6,10 +6,6 @@ jobs:
   build:
     docker:
       - image: python:latest
-        environment:
-          TOXENV: circleci
-          PG_HOST: db
-          PG_USER: postgres
       - image: postgres:latest
         environment:
           POSTGRES_USER: postgres

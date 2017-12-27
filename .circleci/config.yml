@@ -6,6 +6,8 @@ jobs:
   build:
     docker:
       - image: python:latest
+        environment:
+          POSTGRES_HOST: localhost
       - image: postgres:latest
         environment:
           POSTGRES_USER: postgres

@@ -13,8 +13,6 @@ services:
     command: |
       bash -c "\
       bash"
-    ports:
-      - "8888:8888"
     links:
       - postgres:db
 

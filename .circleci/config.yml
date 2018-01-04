@@ -4,6 +4,8 @@ jobs:
   build:
     docker:
       - image: python:latest
+        environment:
+          POSTGRES_HOST: localhost
       - image: postgres:latest
         environment:
           POSTGRES_USER: postgres
@@ -13,4 +15,4 @@ jobs:
       - checkout
       - run: python -m venv venv
       - run: venv/bin/pip install tox
-      - run: POSTGRES_HOST=localhost venv/bin/tox
+      - run: venv/bin/tox

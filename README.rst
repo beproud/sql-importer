@@ -14,7 +14,7 @@ Install
 
 Usage
 =====
-- You have to make `__init__.py` at a directory which sql files have been placed on.
+- You have to make `__init__.py` at the same directory which sql files have been placed on.
 - And write like the following to the `__init__.py`:
 
   .. code:: python

@@ -42,11 +42,76 @@ Usage
 
     from datetime import date
     from testing import sql
-    sql.sum_sales.execute(sales_from=date(2017, 5, 22), sales_to=date(2017, 12, 26))
+    sql.sum_sales.query(sales_from=date(2017, 5, 22), sales_to=date(2017, 12, 26))
+
+  - `sql` object has 2 methods, both method execute the sql and receive variables as keyword arguments.
+
+    :query: It returns records. it expects only what has one or more results like `select` query.
+    :execute: It returns number of records affected the sql.
 
 - Now `sql_type` argument allows `postgresql`.
 
   - If you want to use the other sql_type, please make the issue on https://github.com/beproud/sql-importer.
+
+Demo
+====
+
+start up
+--------
+
+.. code:: bash
+
+  $ git clone git@github.com:beproud/sql-importer.git
+  $ cd sql-importer
+  $ docker-compose up
+
+
+preparation
+-----------
+
+.. code:: bash
+
+  $ docker exec -it sqlimporter_app_1 /bin/bash
+  # python -m venv venv # only first time
+  # source venv/bin/activate
+
+Try
+---
+
+.. code:: bash
+
+  (venv) # ls tests/postgresql/sql
+  __init__.py  __init__.pyc  __pycache__	clear.sql  create_table.sql  delete.sql  drop_table.sql  insert.sql  select.sql  update.sql
+
+   (venv) # python
+
+.. code:: python
+
+  >>> from tests.postgresql import sql
+  >>> sql.
+  sql.clear         sql.create_table  sql.drop_table    sql.init(         sql.os            sql.select
+  sql.connection    sql.delete        sql.host          sql.insert        sql.psycopg2      sql.update
+
+  >>> sql.create_table.execute()
+  -1
+  >>> sql.insert.execute(name='apple', price=100)
+  1
+  >>> list(sql.select.query())
+  [{'name': 'apple', 'price': 100}]
+  >>> sql.delete.execute(name='orange')
+  0
+  >>> sql.delete.execute(name='apple')
+  1
+  >>> list(sql.select.query())
+  []
+
+Unittest
+--------
+
+.. code:: bash
+
+  (venv) # tox
+
 
 Contributors
 ============

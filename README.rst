@@ -1,4 +1,7 @@
-it enables sql files to be imported as python modules.
+It enables SQL files to be imported as python modules.
+
+.. image:: https://circleci.com/gh/beproud/sql-importer.svg?style=svg
+    :target: https://circleci.com/gh/beproud/sql-importer
 
 Requirements
 ============
@@ -47,11 +50,11 @@ Usage
   - `sql` object has 2 methods, both method execute the sql and receive variables as keyword arguments.
 
     :query: It returns records. it expects only what has one or more results like `select` query.
-    :execute: It returns number of records affected the sql.
+    :execute: It returns number of records affected by the SQL.
 
 - Now `sql_type` argument allows `postgresql`.
 
-  - If you want to use the other sql_type, please make the issue on https://github.com/beproud/sql-importer.
+  - If you want to use the other sql_type, please make the issue on https://github.com/beproud/sql-importer .
 
 Demo
 ====
@@ -112,6 +115,8 @@ Unittest
 
   (venv) # tox
 
+
+- This library is tested by only latest `postgresql`.
 
 Contributors
 ============

@@ -16,7 +16,7 @@ keywords = [
 
 setup(
     name='sql-importer',
-    version='0.0.0',
+    version='1.0.0',
     description='it enables sql files to be imported as a python module.',
     long_description=open('./README.rst', 'r').read(),
     classifiers=classifiers,
